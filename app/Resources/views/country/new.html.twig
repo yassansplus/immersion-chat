@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <div class="col-md-10 content">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Nouveau Pays dans la liste</h3>
+            </div>
+            <div class="panel-body">
+
+
+                {{ form_start(form) }}
+                <div class="col-md-6">
+                    {{ form_label(form.nom ) }}
+                    {{ form_widget(form.nom ) }}
+                </div>
+                <div class="col-md-12">
+                <br>
+
+                    <input type="submit" value="Créer nouveau pays"  class="btn btn-success"/>
+                    <a href="{{ path('country_index') }}" class="btn btn-info">Retourner à la liste des Pays</a>
+
+                </div>
+
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

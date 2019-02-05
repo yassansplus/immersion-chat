@@ -1,0 +1,20 @@
+
+<div class="panel-message h400 col-md-12 put-in">
+    {% for message in messages %}
+    <div class="col-md-12 mb20">
+        <div class="col-md-4 pull-right">
+
+            <div class="col-md-12 pull-right">
+
+                <span class="label label-info pull-right">{{ message.pseudo}}</span>  <br>
+                <span class="pull-right">le 21/02/18 à 21h52</span>
+            </div>
+            <div class="col-md-12">
+
+                <div class="blockmessage">
+                    {{ message.message }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

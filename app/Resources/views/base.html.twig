@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+              id="bootstrap-css">
+        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+{% include 'include/menu.html.twig' %}
+<div class="container-fluid main-container">
+    {% include 'include/leftMenu.html.twig' %}
+    {% block body %}{% endblock %}
+</div>
+<footer class="pull-left footer">
+    <p class="col-md-12">
+    <hr class="divider">
+    Copyright &COPY; 2018 <a href="http://www.pingpong-labs.com">Gravitano</a>
+    </p>
+</footer>
+{% block javascripts %}{% endblock %}
+<script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+</body>
+</html>

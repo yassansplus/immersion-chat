@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <div class="col-md-10 content">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Message -  {{ country.nom }}</h3>
+            </div>
+
+            <div class="panel-body ">
+                <div class="text-block">
+                    {{ render(controller('AppBundle:Message:allMessage', {'id' : country.id})) }}
+
+                </div>
+
+            </div>
+                <input type="hidden" class="deplacer" value="{{ country.id }}">
+                {{ render(controller('AppBundle:Message:new', {'id' : country.id})) }}
+
+                {#<form class="AjaxForm" method="POST">#}
+                    {#<input class="form-control" type="text" name="pseudo" placeholder="pseudo"><br>#}
+                    {#<input type="hidden" value="{{ country.id }}">#}
+                    {#<textarea name="" class="form-control" id="" cols="30" rows="10">#}
+
+                    {#</textarea>#}
+                    {#<br>#}
+                    {#<input type="submit" value="Envoyer" class="btn btn-success">#}
+                {#</form>#}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+
+<script src="{{ asset("js/index.js") }}"></script>
+{% endblock %}
